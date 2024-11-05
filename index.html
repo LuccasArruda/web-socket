@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat com WebSocket</title>
+</head>
+<body>
+    <h1>Chat com WebSocket</h1>
+    <input type="text" id="messageInput" placeholder="Digite uma mensagem" />
+    <button onclick="sendMessage()">Enviar</button>
+    <div id="chatLog"></div>
+
+    <script>
+        const ws = new WebSocket("ws://localhost:8081");
+
+        ws.onopen = () => {
+            console.log("Conectado ao servidor WebSocket");
+        };
+
+        ws.onmessage = (event) => {
+            const chatLog = document.getElementById("chatLog");
+            const message = document.createElement("div");
+            message.textContent = "Servidor: " + event.data;
+            chatLog.appendChild(message);
+        };
+
+        ws.onclose = () => {
+            console.log("Conexão fechada com o servidor WebSocket");
+        };
+
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            const message = input.value;
+            ws.send(message);
+
+            const chatLog = document.getElementById("chatLog");
+            const userMessage = document.createElement("div");
+            userMessage.textContent = "Você: " + message;
+            chatLog.appendChild(userMessage);
+
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
