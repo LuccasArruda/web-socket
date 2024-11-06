@@ -89,6 +89,14 @@
     border: solid var(--amarelo-principal) 1px;
 }
 
+body{
+    caret-color: var(--amarelo-principal);
+}
+
+::selection{
+    background-color: var(--laranja);
+}
+
 /* elementos */
 .logo-site{
     width: 50px;
