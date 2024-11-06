@@ -1,0 +1,103 @@
+
+:root{
+    --amarelo-principal: #f49d0c;
+    --amarelo-secundario: #d87607;
+    --laranja-claro: #bc560a;
+    --laranja-mediano: #d87607;
+    --laranja: #923f0e;
+    --amarelo-claro: #fffbeb;
+    --cinza-conversas: rgb(32, 32, 32);
+    --cinza-fundo: rgb(27, 27, 27);
+}
+
+.bg-cinza-fundo{
+    background-color: var(--cinza-fundo);
+}
+
+.bg-cinza-conversas{
+    background-color: var(--cinza-conversas);
+}
+
+.bg-amarelo-principal{
+    background-color: var(--amarelo-principal);
+}
+
+.bg-amarelo-secundario{
+    background-color: var(--amarelo-secundario)
+}
+
+.bg-gradiente-amarelo-secundario-laranja {
+    background: linear-gradient(60deg, var(--amarelo-secundario), var(--laranja));
+}
+
+.bg-gradiente-amarelo-principal-laranja-mediano {
+    background: linear-gradient(60deg, var(--amarelo-principal), var(--laranja-mediano));
+}
+
+.bg-gradiente-amarelo-principal-secundario {
+    background: linear-gradient(60deg, var(--amarelo-principal), var(--amarelo-secundario));
+}
+
+.text-laranja-mediano{
+    color: var(--laranja-mediano);
+}
+
+.text-cinza-fundo{
+    color: var(--cinza-fundo);
+}
+
+.text-cinza-conversas{
+    color: var(--cinza-conversas);
+}
+
+.border-amarelo-principal{
+    border: solid var(--amarelo-principal) 1px;
+}
+
+.mensagens-conversa{
+    position: absolute;
+    background-color: rgb(32, 32, 32);
+    padding: 20px;
+    color: var(--amarelo-claro);
+    height: 80%;
+    width: 95%;
+    
+    #chatLog{        
+        overflow-y: scroll;
+        height: 90%;
+
+        div{
+            background: linear-gradient(60deg, var(--amarelo-secundario), var(--laranja));
+            margin-top: 6px;
+            margin-bottom: 6px;
+            display: block;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            padding: 5px 10px 5px 10px;
+            word-break: normal;
+        }
+    }
+}
+
+.logo-site{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin: 0px 10px 0px 10px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.input-mensagem {
+    input {
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+    }
+}
