@@ -11,6 +11,22 @@
     --cinza-fundo: rgb(27, 27, 27);
 }
 
+/* Estilização de Scrollbar */
+::-webkit-scrollbar-track{
+    background: var(--cinza-conversas);
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(60deg, var(--amarelo-secundario), var(--laranja));
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: var(--laranja);
+}
+
+/* Fundos */
 .bg-cinza-fundo{
     background-color: var(--cinza-fundo);
 }
@@ -39,6 +55,7 @@
     background: linear-gradient(60deg, var(--amarelo-principal), var(--amarelo-secundario));
 }
 
+/* cores de fonte */
 .text-laranja-mediano{
     color: var(--laranja-mediano);
 }
@@ -67,8 +84,23 @@
     color: var(--cinza-conversas);
 }
 
+/* bordas */
 .border-amarelo-principal{
     border: solid var(--amarelo-principal) 1px;
+}
+
+/* elementos */
+.logo-site{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin: 0px 10px 0px 10px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .mensagens-conversa{
@@ -97,16 +129,14 @@
     }
 }
 
-.logo-site{
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    margin: 0px 10px 0px 10px;
-
-    img{
+.input-mensagem {
+    padding: 2px;
+    input {
+        outline: none;
+        border: none;
+        border-radius: 3px;
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 }
 
@@ -117,7 +147,7 @@
     width: 40px;
     height: 40px;
     padding: 6px;
-    margin: 0px 10px;
+    margin: 0px 0px 0px 10px;
     transition-duration: 250ms;
 
     img{
@@ -127,16 +157,4 @@
 
 .btn-enviar:hover{
     transform: scale(1.15);
-}
-
-.input-mensagem {
-    padding: 2px;
-    width: 90%;
-    input {
-        outline: none;
-        border: none;
-        border-radius: 3px;
-        width: 100%;
-        height: 100%;
-    }
 }

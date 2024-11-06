@@ -10,16 +10,16 @@
 <body class="bg-cinza-fundo">
     <header class="d-flex fixed-top bg-gradiente-amarelo-principal-laranja-mediano p-1 text-center">
         <div class="rounded-circle bg-dark logo-site">
-            <img class="" src="assets/img/chat.png" alt="">
+            <img src="assets/img/chat.png" alt="">
         </div>
         <h1 class="cinza-fundo">Socket<span class="text-laranja">Talk</span></h1>
     </header>
     <main class="p-5">
-        <div class="fixed-bottom d-flex mb-3 mx-5 w-100">
-            <div class="input-mensagem bg-gradiente-amarelo-principal-secundario rounded-5"> <!--flex-grow-1-->
+        <div class="fixed-bottom row flex p-4">
+            <div class="col input-mensagem bg-gradiente-amarelo-principal-secundario rounded-5">
                 <input class="rounded-5 px-3 bg-cinza-fundo text-amarelo-claro" type="text" id="messageInput" placeholder="Digite uma mensagem" />
             </div>
-            <button class="justify-content-end btn-enviar bg-gradiente-amarelo-principal-secundario" onclick="sendMessage()">
+            <button class="btn-enviar bg-gradiente-amarelo-principal-secundario" onclick="sendMessage()">
                 <img class="w-100 h-100 p-1" src="assets/img/send.png" alt="">
             </button>
         </div>
@@ -33,39 +33,7 @@
         </div>
     </main>
 
-    <script>
-        const ws = new WebSocket("ws://localhost:8081");
-        let nomeDoCabra       
-        ws.onopen = () => {
-            console.log("Conectado ao servidor WebSocket");
-            nomeDoCabra = window.prompt("Digite seu nome:")
-            console.log(nomeDoCabra)
-        };
-
-        ws.onmessage = (event) => {
-            const chatLog = document.getElementById("chatLog");
-            const message = document.createElement("div");
-            message.textContent = "Servidor " + event.data;
-            chatLog.appendChild(message);
-        };
-
-        ws.onclose = () => {
-            console.log("Conexão fechada com o servidor WebSocket");
-        };
-
-        function sendMessage() {
-            const input = document.getElementById("messageInput");
-            const message = input.value;
-            ws.send(message);
-
-            const chatLog = document.getElementById("chatLog");
-            const userMessage = document.createElement("div");
-            userMessage.textContent = `${nomeDoCabra}: ${message}`
-            chatLog.appendChild(userMessage);
-
-            input.value = "";
-        }
-    </script>
+    <script src="assets/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
