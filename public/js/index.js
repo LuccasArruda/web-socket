@@ -1,4 +1,6 @@
-const ws = new WebSocket("ws://172.22.53.106:8081");
+let ipConexao = window.prompt("Digite o IP de conexão: ")
+
+const ws = new WebSocket(`ws://${ipConexao}:8081`);
 
 ws.onopen = () => {
     console.log("Conectado ao servidor WebSocket");
@@ -8,7 +10,7 @@ ws.onmessage = (event) => {
     const chatLog = document.getElementById("chatLog");
     const message = document.createElement("div");
     
-    message.textContent = "Desconhecido " + event.data;
+    message.textContent = "Desconhecido: " + event.data;
     message.classList.add("server");
     chatLog.appendChild(message);
 

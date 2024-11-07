@@ -116,10 +116,10 @@ body{
     color: var(--amarelo-claro);
     margin: 10%;
     
-    #chatLog{        
+    #chatLog{       
+        position: relative; 
         overflow-y: scroll;
-        overflow-x: none;
-        height: 90%;
+        max-height: 270px;
 
         div{
             background: linear-gradient(60deg, var(--amarelo-secundario), var(--laranja));
