@@ -166,3 +166,23 @@ body{
 .btn-enviar:hover{
     transform: scale(1.15);
 }
+
+#chatLog div.client {
+    align-self: flex-end;
+    background: linear-gradient(60deg, var(--amarelo-secundario), var(--laranja));
+    color: var(--cinza-fundo);
+}
+
+#chatLog div.server {
+    align-self: flex-start;
+    background: linear-gradient(60deg, var(--amarelo-principal), var(--amarelo-secundario));
+    color: var(--cinza-fundo);
+}
+
+#chatLog {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+}
