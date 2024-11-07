@@ -17,7 +17,7 @@ async def handle_connection(websocket, path):
         connected_clients.remove(websocket)
 
 async def start_server():
-    server = await websockets.serve(handle_connection, "127.0.0.1", 8081)
+    server = await websockets.serve(handle_connection, "172.22.53.106", 8081)
     print("Servidor WebSocket iniciado na porta 8081 com sucesso!")
     await server.wait_closed()
 
